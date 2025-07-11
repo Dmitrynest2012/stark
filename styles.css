@@ -1,0 +1,407 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(135deg, #1a1a1a, #2c3e50);
+    font-family: Play, sans-serif;
+    color: #fff;
+}
+
+.header {
+    margin-top: 10px;
+    font-size: 1.5em;
+    background: linear-gradient(to right, #6bb8ff, #e8f4ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    z-index: 10;
+}
+
+.suit-progress {
+    margin-top: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 8px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px #6bb8ff;
+    border: 1px solid #6bb8ff;
+    width: 200px;
+    text-align: center;
+}
+
+.suit-progress div {
+    margin: 3px 0;
+    font-size: 0.9em;
+    background: linear-gradient(to right, #6bb8ff, #e8f4ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.stats {
+    margin-bottom: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 8px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px #6bb8ff;
+    border: 1px solid #6bb8ff;
+    width: 200px;
+}
+
+.stats div {
+    margin: 3px 0;
+    font-size: 0.9em;
+    background: linear-gradient(to right, #6bb8ff, #e8f4ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.avatar-container {
+    position: relative;
+    width: 190px;
+    height: 190px;
+    margin: 10px auto;
+}
+
+.avatar {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    left: 2px;
+    top: 2px;
+    border-radius: 50%;
+    border: 3px solid #6bb8ff;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.avatar:hover {
+    transform: scale(1.05);
+}
+
+.avatar:active {
+    transform: scale(0.95);
+}
+
+.energy-ring {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: conic-gradient(#6bb8ff var(--energy-percentage, 100%), #333 0);
+    transition: background 0.5s ease;
+    z-index: -1;
+}
+
+.energy-ring::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1a1a1a, #2c3e50);
+    z-index: -1;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 10px rgba(107, 184, 255, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(107, 184, 255, 0.8);
+    }
+    100% {
+        box-shadow: 0 0 10px rgba(107, 184, 255, 0.5);
+    }
+}
+
+@keyframes glow {
+    0% {
+        background-color: rgba(0, 0, 0, 0.8);
+        box-shadow: 0 0 10px rgba(107, 184, 255, 0.5);
+    }
+    25% {
+        background-color: #6bb8ff;
+        box-shadow: 0 0 15px #40e0d0;
+    }
+    50% {
+        background-color: #40e0d0;
+        box-shadow: 0 0 20px rgba(107, 184, 255, 0.8);
+    }
+    75% {
+        background-color: #6bb8ff;
+        box-shadow: 0 0 15px #40e0d0;
+    }
+    100% {
+        background-color: rgba(0, 0, 0, 0.8);
+        box-shadow: 0 0 10px rgba(107, 184, 255, 0.5);
+    }
+}
+
+.tabs {
+    margin-top: 10px;
+    width: 400px;
+}
+
+.tab-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.tab-button {
+    padding: 10px 20px;
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid #6bb8ff;
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.tab-button.active, .tab-button:hover {
+    background: #6bb8ff;
+    color: #1a1a1a;
+}
+
+.tab-content {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #6bb8ff;
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.sub-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    gap: 10px;
+}
+
+.sub-tab-button {
+    padding: 8px 16px;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid #6bb8ff;
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.sub-tab-button.active, .sub-tab-button:hover {
+    background: #6bb8ff;
+    color: #1a1a1a;
+}
+
+.sub-tab-button:disabled {
+    background: #333;
+    cursor: not-allowed;
+}
+
+.sub-tab-content {
+    display: none;
+}
+
+.tab-content.active .sub-tab-content.active {
+    display: block;
+}
+
+#stocks-container, #crypto-container, #deposits-container, #equipment-container, #boosters-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-height: calc(100vh - 360px);
+    overflow-y: auto;
+    visibility: visible;
+    opacity: 1;
+}
+
+#stocks-container::-webkit-scrollbar,
+#crypto-container::-webkit-scrollbar,
+#deposits-container::-webkit-scrollbar,
+#equipment-container::-webkit-scrollbar,
+#boosters-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+#stocks-container::-webkit-scrollbar-track,
+#crypto-container::-webkit-scrollbar-track,
+#deposits-container::-webkit-scrollbar-track,
+#equipment-container::-webkit-scrollbar-track,
+#boosters-container::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 4px;
+}
+
+#stocks-container::-webkit-scrollbar-thumb,
+#crypto-container::-webkit-scrollbar-thumb,
+#deposits-container::-webkit-scrollbar-thumb,
+#equipment-container::-webkit-scrollbar-thumb,
+#boosters-container::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #6bb8ff, #e8f4ff);
+    border-radius: 4px;
+}
+
+#stocks-container::-webkit-scrollbar-thumb:hover,
+#crypto-container::-webkit-scrollbar-thumb:hover,
+#deposits-container::-webkit-scrollbar-thumb:hover,
+#equipment-container::-webkit-scrollbar-thumb:hover,
+#boosters-container::-webkit-scrollbar-thumb:hover {
+    background: #6bb8ff;
+}
+
+.card {
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid #6bb8ff;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 5px;
+    width: 120px;
+    text-align: center;
+    visibility: visible;
+    opacity: 1;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.card:hover, .card.active {
+    animation: glow s ease-in-out infinite;
+}
+
+.card h3 {
+    margin: 5px 0;
+    font-size: 1em;
+    color: #e8f4ff;
+}
+
+.card p {
+    margin: 3px 0;
+    font-size: 0.8em;
+    color: #e8f4ff;
+}
+
+.card button {
+    padding: 6px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-size: 0.8em;
+}
+
+.card button.active {
+    background: #6bb8ff;
+    color: #1a1a1a;
+}
+
+.card button:disabled {
+    background: #555;
+    cursor: not-allowed;
+}
+
+@media (max-width: 600px) {
+    .header {
+        font-size: 1.2em;
+        margin-top: 5px;
+    }
+
+    .suit-progress {
+        width: 180px;
+        padding: 6px;
+        margin-top: 5px;
+    }
+
+    .suit-progress div {
+        font-size: 0.8em;
+    }
+
+    .container {
+        margin-top: 5px;
+    }
+
+    .stats {
+        width: 180px;
+        padding: 6px;
+        margin-bottom: 5px;
+    }
+
+    .stats div {
+        font-size: 0.8em;
+    }
+
+    .avatar-container {
+        width: 150px;
+        height: 150px;
+        margin: 16px auto;
+    }
+
+    .avatar {
+        position: relative;
+        width: 98%;
+        height: 98%;
+        left: -2px;
+        top: -2px;
+    }
+
+    .energy-ring {
+        width: 170px;
+        height: 170px;
+        top: -10px;
+        left: -10px;
+    }
+
+    .energy-ring::before {
+        top: 4px;
+        left: 4px;
+        right: 4px;
+        bottom: 4px;
+    }
+
+    .tabs {
+        width: 90%;
+        margin-top: 5px;
+    }
+
+    .tab-buttons {
+        gap: 5px;
+        margin-top: 5px;
+    }
+
+    .tab-button {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+
+    .sub-tabs {
+        gap: 5px;
+    }
+
+    .sub-tab-button {
+        padding: 6px 12px;
+        font-size: 0.9em;
+    }
+
+    .tab-content {
+        padding: 15px;
+    }
+
+    #stocks-container, #crypto-container, #deposits-container, #equipment-container, #boosters-container {
+        max-height: calc(100vh - 350px);
+    }
+}

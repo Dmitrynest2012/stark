@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тони Старк Кликер</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">Джарвис ОС</div>
+    <div class="suit-progress">
+        <div>Готовность костюма: <span id="suitProgress">0%</span></div>
+        <div>Этап: <span id="questStage">Проектирование</span></div>
+    </div>
+    <div class="container">
+        <div class="stats">
+            <div>Энергия: <span id="currentEnergy">100</span>/<span id="maxEnergy">100</span></div>
+            <div>Опыт: <span id="currentExp">0</span>/<span id="maxExp">100</span></div>
+            <div>Уровень: <span id="level">1</span>/<span id="maxLevel">24</span></div>
+            <div>Депозит: <span id="money">0</span>/<span id="maxMoney">1000</span></div>
+            <div>Доход: <span id="totalIncome">0</span>/с</div>
+        </div>
+        <div class="avatar-container">
+            <div class="energy-ring"></div>
+            <img src="tony_stark_placeholder.jpg" alt="Тони Старк" class="avatar" id="avatar">
+        </div>
+        <div class="tabs">
+            <div class="tab-buttons">
+                <button class="tab-button active" data-tab="exchange">Биржа</button>
+                <button class="tab-button" data-tab="assets">Имущество</button>
+                <button class="tab-button" data-tab="boosters">Бустеры</button>
+            </div>
+            <div class="tab-content" id="exchange">
+                <div class="sub-tabs">
+                    <button class="sub-tab-button active" data-sub-tab="stocks">Акции</button>
+                    <button class="sub-tab-button" data-sub-tab="crypto">Крипта</button>
+                </div>
+                <div class="sub-tab-content" id="stocks">
+                    <div id="stocks-container"></div>
+                </div>
+                <div class="sub-tab-content" id="crypto">
+                    <div id="crypto-container"></div>
+                </div>
+            </div>
+            <div class="tab-content" id="assets">
+                <div class="sub-tabs">
+                    <button class="sub-tab-button active" data-sub-tab="deposits">Вклады</button>
+                    <button class="sub-tab-button" data-sub-tab="equipment">Оборудование</button>
+                </div>
+                <div class="sub-tab-content" id="deposits">
+                    <div id="deposits-container"></div>
+                </div>
+                <div class="sub-tab-content" id="equipment">
+                    <div id="equipment-container"></div>
+                </div>
+            </div>
+            <div class="tab-content" id="boosters">
+                <div class="sub-tabs">
+                    <button class="sub-tab-button active" data-sub-tab="boosters">Бустеры</button>
+                </div>
+                <div class="sub-tab-content" id="boosters">
+                    <div id="boosters-container"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="game.js"></script>
+    <script src="audio.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,187 @@
+{
+    "initialState": {
+        "currentEnergy": 100,
+        "currentExp": 0,
+        "level": 1,
+        "money": 0
+    },
+    "click": {
+        "energyCost": 5
+    },
+    "energyRegen": {
+        "ratePerSecond": 0.5
+    },
+    "levels": [
+        {"maxEnergy": 100, "maxExp": 100, "maxMoney": 1000, "moneyGain": 10, "expGain": 5},
+        {"maxEnergy": 110, "maxExp": 150, "maxMoney": 1500, "moneyGain": 12, "expGain": 6},
+        {"maxEnergy": 120, "maxExp": 225, "maxMoney": 2000, "moneyGain": 14, "expGain": 7},
+        {"maxEnergy": 130, "maxExp": 337.5, "maxMoney": 2500, "moneyGain": 16, "expGain": 8},
+        {"maxEnergy": 140, "maxExp": 506.25, "maxMoney": 3000, "moneyGain": 18, "expGain": 9},
+        {"maxEnergy": 150, "maxExp": 759.375, "maxMoney": 3500, "moneyGain": 20, "expGain": 10},
+        {"maxEnergy": 160, "maxExp": 1139.0625, "maxMoney": 4000, "moneyGain": 22, "expGain": 11},
+        {"maxEnergy": 170, "maxExp": 1708.59375, "maxMoney": 4500, "moneyGain": 24, "expGain": 12},
+        {"maxEnergy": 180, "maxExp": 2562.890625, "maxMoney": 5000, "moneyGain": 26, "expGain": 13},
+        {"maxEnergy": 190, "maxExp": 3844.3359375, "maxMoney": 5500, "moneyGain": 28, "expGain": 14},
+        {"maxEnergy": 200, "maxExp": 5766.50390625, "maxMoney": 6000, "moneyGain": 30, "expGain": 15},
+        {"maxEnergy": 210, "maxExp": 8649.755859375, "maxMoney": 6500, "moneyGain": 32, "expGain": 16},
+        {"maxEnergy": 220, "maxExp": 12974.6337890625, "maxMoney": 7000, "moneyGain": 34, "expGain": 17},
+        {"maxEnergy": 230, "maxExp": 19461.95068359375, "maxMoney": 7500, "moneyGain": 36, "expGain": 18},
+        {"maxEnergy": 240, "maxExp": 29192.926025390625, "maxMoney": 8000, "moneyGain": 38, "expGain": 19},
+        {"maxEnergy": 250, "maxExp": 43789.38903808594, "maxMoney": 8500, "moneyGain": 40, "expGain": 20},
+        {"maxEnergy": 260, "maxExp": 65684.0835571289, "maxMoney": 9000, "moneyGain": 42, "expGain": 21},
+        {"maxEnergy": 270, "maxExp": 98526.12533569336, "maxMoney": 9500, "moneyGain": 44, "expGain": 22},
+        {"maxEnergy": 280, "maxExp": 147789.18800354004, "maxMoney": 10000, "moneyGain": 46, "expGain": 23},
+        {"maxEnergy": 290, "maxExp": 221683.78200531006, "maxMoney": 10500, "moneyGain": 48, "expGain": 24},
+        {"maxEnergy": 300, "maxExp": 332525.6730079651, "maxMoney": 11000, "moneyGain": 50, "expGain": 25},
+        {"maxEnergy": 310, "maxExp": 498788.50951194763, "maxMoney": 11500, "moneyGain": 52, "expGain": 26},
+        {"maxEnergy": 320, "maxExp": 748182.7642679214, "maxMoney": 12000, "moneyGain": 54, "expGain": 27},
+        {"maxEnergy": 330, "maxExp": 1122274.1464018822, "maxMoney": 12500, "moneyGain": 56, "expGain": 28}
+    ],
+    "stocks": [
+        {
+            "name": "Stark Industries",
+            "maxLevel": 10,
+            "baseCost": 100,
+            "costMultiplier": 2,
+            "passiveIncome": 10,
+            "requiredStocks": []
+        },
+        {
+            "name": "Tesla",
+            "maxLevel": 10,
+            "baseCost": 200,
+            "costMultiplier": 2.5,
+            "passiveIncome": 20,
+            "requiredStocks": [
+                {"name": "Stark Industries", "level": 3}
+            ]
+        },
+        {
+            "name": "Apple",
+            "maxLevel": 10,
+            "baseCost": 300,
+            "costMultiplier": 3,
+            "passiveIncome": 30,
+            "requiredStocks": [
+                {"name": "Tesla", "level": 2}
+            ]
+        },
+        {
+            "name": "ABB Robotics",
+            "maxLevel": 10,
+            "baseCost": 300,
+            "costMultiplier": 2.8,
+            "passiveIncome": 30,
+            "requiredStocks": [
+                {"name": "Tesla", "level": 3}
+            ]
+        },
+        {
+            "name": "Maxar Technologies",
+            "maxLevel": 10,
+            "baseCost": 750,
+            "costMultiplier": 3.2,
+            "passiveIncome": 40,
+            "requiredStocks": [
+                {"name": "Tesla", "level": 4}
+            ]
+        },
+        {
+            "name": "Northrop Grumman",
+            "maxLevel": 10,
+            "baseCost": 900,
+            "costMultiplier": 3.1,
+            "passiveIncome": 37,
+            "requiredStocks": [
+                {"name": "Tesla", "level": 4}
+            ]
+        },
+        {
+            "name": "MDA Space",
+            "maxLevel": 10,
+            "baseCost": 1200,
+            "costMultiplier": 3.5,
+            "passiveIncome": 45,
+            "requiredStocks": [
+                {"name": "Tesla", "level": 4}
+            ]
+        }
+    ],
+    "crypto": [
+        {
+            "name": "Bitcoin",
+            "maxLevel": 10,
+            "baseCost": 150,
+            "costMultiplier": 2.2,
+            "passiveIncome": 15,
+            "requiredCrypto": []
+        },
+        {
+            "name": "Ethereum",
+            "maxLevel": 10,
+            "baseCost": 250,
+            "costMultiplier": 2.7,
+            "passiveIncome": 25,
+            "requiredCrypto": [
+                {"name": "Bitcoin", "level": 2}
+            ]
+        }
+    ],
+    "deposits": [
+        {
+            "name": "Кошелек",
+            "maxLevel": 10,
+            "baseCost": 500,
+            "costMultiplier": 1.2,
+            "maxMoneyIncrease": 1000
+        },
+        {
+            "name": "Банковская ячейка",
+            "maxLevel": 10,
+            "baseCost": 1000,
+            "costMultiplier": 1.3,
+            "maxMoneyIncrease": 4000
+        }
+    ],
+    "equipment": [
+        {
+            "name": "Дуговой реактор",
+            "maxLevel": 10,
+            "baseCost": 300,
+            "costMultiplier": 2.5,
+            "requiredEquipment": []
+        },
+        {
+            "name": "Репульсорные модули",
+            "maxLevel": 10,
+            "baseCost": 400,
+            "costMultiplier": 3,
+            "requiredEquipment": [
+                {"name": "Дуговой реактор", "level": 2}
+            ]
+        },
+        {
+            "name": "Гидравлика",
+            "maxLevel": 10,
+            "baseCost": 500,
+            "costMultiplier": 3.5,
+            "requiredEquipment": [
+                {"name": "Репульсорные модули", "level": 2}
+            ]
+        }
+    ],
+    "boosters": [
+        {
+            "name": "Кофе",
+            "cost": 50,
+            "duration": 10,
+            "energyRegenMultiplier": 2
+        },
+        {
+            "name": "Пончик",
+            "cost": 100,
+            "duration": 15,
+            "energyRegenMultiplier": 3
+        }
+    ]
+}
